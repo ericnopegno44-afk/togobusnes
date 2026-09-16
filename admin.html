@@ -1,0 +1,24 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin — TOGO BUSINESS</title><link rel="stylesheet" href="assets/style.css"></head>
+<body><header class="topbar"><a class="brand" href="admin.html"><span>EP</span> TOGO BUSINESS ADMIN</a><nav><button id="adminLogout" class="linkbtn">Déconnexion</button></nav></header><main class="app"><p class="eyebrow">ADMINISTRATION DÉMO</p><h1>Gestion de la plateforme</h1><div class="stats"><div><span>Utilisateurs</span><strong id="userCount">0</strong></div><div><span>Demandes de retrait</span><strong id="withdrawCount">0</strong></div><div><span>Récompenses créditées</span><strong id="rewardCount">0 F</strong></div></div><div class="grid2"><section class="panel"><h2>Utilisateurs</h2><div id="users"></div></section><section class="panel"><h2>Demandes de retrait</h2><div id="withdrawals"></div></section></div>
+<section class="panel" style="margin-top:20px">
+<h2>⚙️ Configuration des paiements</h2>
+<p class="muted">Ces champs sont réservés à l'administrateur. Dans cette démo, ils sont enregistrés localement et ne déclenchent aucun paiement réel.</p>
+<form id="paymentSettingsForm">
+<label>Fournisseur principal
+<select id="payProvider"><option>Moov Money</option><option>Mixx by Yas</option><option>Autre prestataire</option></select>
+</label>
+<label>Nom du compte marchand<input id="merchantName" placeholder="Nom du compte marchand"></label>
+<label>Identifiant marchand<input id="merchantId" placeholder="Identifiant / Merchant ID"></label>
+<label>Clé API publique<input id="publicKey" placeholder="Clé publique"></label>
+<label>URL Webhook / Callback<input id="webhookUrl" placeholder="https://..."></label>
+<label>Numéro de réception<input id="receiveNumber" inputmode="tel" placeholder="Numéro Mobile Money"></label>
+<div class="grid2">
+<label>Inscription (F CFA)<input id="signupFee" type="number" value="2500"></label>
+<label>Retrait minimum (F CFA)<input id="minWithdraw" type="number" value="2000"></label>
+</div>
+<button class="btn" type="submit">Enregistrer la configuration</button>
+</form>
+<p id="paymentMsg" class="msg"></p>
+<div class="notice">Ne place jamais une clé API secrète dans HTML ou JavaScript côté navigateur. En production, les secrets doivent rester sur le serveur.</div>
+</section>
+</main><script src="assets/app.js"></script></body></html>
